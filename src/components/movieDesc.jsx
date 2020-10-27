@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import logo from './mulan.jpg';
 //import '../bootstrap/dist/css/bootstrap.css';
-import './movieDesc.css'
+import './movieDesc.css';
+
 class MovieDesc extends Component {
     state = { 
         movieCat:['Horror','Action','Comdey'],
@@ -28,18 +30,18 @@ class MovieDesc extends Component {
                 </thead>
                 <tbody>
                     <tr  >
-               <td><div><img src="src/components/mulan.jpg" alt="mulan poster" /></div>
+               <td><div><img src={logo} alt="mulan poster" /></div>
                         </td>
                         
                         <td >
                             <table className="movieDetail">
                                 <tbody >
                                     
-                                    <tr > <h5>Movie Detail</h5></tr>
+                                    <tr > <h1>Movie Detail</h1></tr>
                                    
-                                    <tr > <p> dramatic
+                                    <tr > <h3> dramatic
                                             adventure
-                                         intense watchout</p></tr>
+                                         intense watchout</h3></tr>
                                     <tr >
                                     <button  onClick={this.handleclick}className="btn btn-primary btn-large">watch</button>
                                     </tr>
