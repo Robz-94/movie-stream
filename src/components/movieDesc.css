@@ -1,22 +1,23 @@
 .movieTable {
   border-style: solid;
   border-color: white;
-  row-gap: 15px;
-  padding: 10px 10px 10px 10px;
+  row-gap: 150px;
+  padding: 100px 10px 10px 10px;
   border-spacing: 50px;
   text-align: center;
 }
 .movieDetail {
-  border-block-width: fixed;
   border-bottom-style: dash;
   border-color: black;
-  row-gap: 15px;
-  padding: 10px 10px 10px 10px;
-  border-spacing: 50px;
+  row-gap: 250px;
+  padding: 100px 100px 100px 100px;
+  border-spacing: 500px;
   text-align: center;
 }
 .tabrule {
-  border-bottom: 1px solid rgb(16, 75, 114);
+  border-bottom: 5px solid rgb(4, 40, 65);
+  max-width: 100;
+  padding: 20px 20px 20px 60px;
 }
 .header {
   background-color: #4caf50;

@@ -5,7 +5,7 @@ import MovieDesc from './components/movieDesc'
 function App() {
   return (
     <div>
-      <h1 >Free Movie Download</h1>
+      
       <MovieDesc />
     </div>
       
