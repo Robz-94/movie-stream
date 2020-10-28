@@ -7,7 +7,7 @@ import Subscription from "./subscription";
 
 class MovieDesc extends Component {
   state = {
-    movieCat: ["Horror", "Action", "Comdey"],
+    movieCats: ["Adventure", "Drama", "Horror", "Action", "Comdey"],
     watched: "",
     Like: "False",
     likeCount: 50,
@@ -21,7 +21,25 @@ class MovieDesc extends Component {
   handleclick = () => {
     this.setState({ watched: "downloading...." });
   };
-
+  currYear = () => {
+    const monthNames = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    var CurrentDate =
+      monthNames[new Date().getMonth()] + "  " + new Date().getFullYear();
+    return CurrentDate;
+  };
   render() {
     return (
       // needs breaking of description
@@ -31,7 +49,11 @@ class MovieDesc extends Component {
         <div className="navbar">
           <Navbar />
         </div>
-        <h2>Adventure Movies- September 2020</h2>
+
+        <h2>
+          {this.state.movieCats[0]}Movies- {this.currYear()}
+        </h2>
+
         <table className="movieTable">
           <thead classname="header"></thead>
           <tbody>
