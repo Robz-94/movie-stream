@@ -1,23 +1,32 @@
 import React, { Component } from "react";
 import logo from "./mulan.jpg";
-//import '../bootstrap/dist/css/bootstrap.css';
 import "./movieDesc.css";
 import Navbar from "./navbar";
 import Subscription from "./subscription";
+import Container from "./container";
 
 class MovieDesc extends Component {
   state = {
     movieCats: ["Adventure", "Drama", "Horror", "Action", "Comdey"],
     watched: "",
     Like: "False",
-    likeCount: 50,
+    likeCount: 60,
     subscriptions: [{ id: 1, subs: 159 }],
   };
+  constructor() {
+    super();
+  }
   handleLikeClick = () => {
-    this.setState({ Like: "true" });
-    this.setState({ likeCount: this.state.likeCount + 1 });
+    let Like = this.state.Like;
+    if (this.state.Like == "False") {
+      this.setState({ Like: "True" });
+      this.setState({ likeCount: this.state.likeCount + 1 });
+    } else {
+      this.setState({ Like: "False" });
+      this.setState({ likeCount: this.state.likeCount - 1 });
+    }
   };
-
+  handleSub = () => {};
   handleclick = () => {
     this.setState({ watched: "downloading...." });
   };
@@ -45,6 +54,7 @@ class MovieDesc extends Component {
       // needs breaking of description
 
       //css customization
+
       <div>
         <div className="navbar">
           <Navbar />
@@ -53,6 +63,7 @@ class MovieDesc extends Component {
         <h2>
           {this.state.movieCats[0]}Movies- {this.currYear()}
         </h2>
+        {/*pagination placed --justified center*/}
 
         <table className="movieTable">
           <thead classname="header"></thead>
@@ -84,7 +95,7 @@ class MovieDesc extends Component {
                     <tr>
                       <button
                         onClick={this.handleclick}
-                        className="btn btn-primary btn-large"
+                        className="btn btn-primary btn-sm m-2"
                       >
                         watch
                       </button>
@@ -97,8 +108,9 @@ class MovieDesc extends Component {
 
             <tr>
               {this.state.likeCount}
+              <i class="fa fa-heart-o" aria-hidden="true"></i>
               <button
-                className="btn btn-secondary btn-large m-2"
+                className="btn btn-secondary btn-sm m-2"
                 onClick={this.handleLikeClick}
               >
                 likes
